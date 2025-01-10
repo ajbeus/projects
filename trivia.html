@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia & Fun Facts</title>
+</head>
+<body>
+    <header>
+        <a id="logo_link" href="index.html">
+            <img class="logo" src="images/Astronomy_Logo.png" alt="Astronomy logo">
+        </a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="trivia.html">Trivia & Fun Facts</a>
+            <a href="science.html">Science</a>
+        </nav>
+    </header>
+    <div id="hero">
+      <div id="hero-box">
+          <img id="hero-img" src="images/Galaxy.jpg" alt="colorful galaxy">
+          <div id="hero-title">
+              <h1 class="home-title">Trivia & Fun Facts</h1>
+          </div>
+      </div>
+  </div>
+    <main class="trivia-grid">
+        <p class="trivia-paragraph">Do you have any questions about space? Look no further! You can browse through out trivia and fun facts 
+        section, updated periodically to include the most current data and events going on with NASA. For example: 
+        Did you know that Saturn's rings are about 175,000 miles (282,000 km) across, but only about 3,200 feet (~1 km) 
+        thick? That is so thin that when you are looking at them through a telescope while they are perfectly flat, you 
+        can’t see them at all; but when they are sideways, they are extremely refined and easy to see. Find more fun facts 
+        here on our website, and fill out the box below if you want to submit some of your own fun facts about space! This 
+        page will also have some multiple choice trivia questions. Compete with your friends, and show off how much 
+        you know! For example: <br>How many known moons does Jupiter have? <br>A. 76 <br>B. 81 <br>C. 95 <br>D. 101 <br>The answer is 95! 
+        Add your own trivia questions!</p>
+
+        <div class="slideshow-container">
+          <div class="mySlides fade">
+            <img src="https://images-assets.nasa.gov/image/PIA10497/PIA10497~small.jpg" alt="saturn and its rings" style="width:100%">
+          </div>
+          <div class="mySlides fade">
+            <img src="https://images-assets.nasa.gov/image/PIA12758/PIA12758~small.jpg" alt="helene moon" style="width:100%">
+          </div>
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <script>
+          let slideIndex = 0;
+          showSlides();
+          
+          function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex - 1].style.display = "block";  
+            setTimeout(showSlides, 4000); // Change image every 4 seconds
+          }
+          
+          function plusSlides(n) {
+            showSlides(slideIndex += n);
+          }
+          </script>
+            <form class="form" action="#" method="post">
+            <ul>
+              <li>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="user_name" />
+              </li>
+              <li>
+                <label for="mail">Email:</label>
+                <input type="email" id="mail" name="user_email" />
+              </li>
+              <li>
+                <label for="msg">Fun Fact/Message:</label>
+                <textarea id="msg" name="user_message"></textarea>
+              </li>
+             
+              <li class="button">
+                <button type="submit">Submit</button>
+              </li>
+            </ul>
+          </form>                        
+        
+        <!-- https://developer.mozilla.org/en-US/docs/Learn/Forms/Your_first_form -->
+    </main>
+    <footer>
+        <p><a href="personal-site-plan.html">Site Plan</a></p>
+    </footer>
+</body>
+</html>
